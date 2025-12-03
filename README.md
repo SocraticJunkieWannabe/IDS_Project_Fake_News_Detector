@@ -1,216 +1,216 @@
-# 📰 Fake News Classification — LSTM Text Classifier
+### 📰 Fake News Classification — LSTM Text Classifier
 
-# 
 
-# This project trains a neural network to classify news articles as FAKE or REAL using TensorFlow.
 
-# It loads a dataset, preprocesses text, trains an LSTM-based classifier, evaluates accuracy, and allows users to test new articles.
+This project trains a neural network to classify news articles as FAKE or REAL using TensorFlow.
 
-# 
+It loads a dataset, preprocesses text, trains an LSTM-based classifier, evaluates accuracy, and allows users to test new articles.
 
-# 📁 Project Structure
 
-# .
 
-# ├── fakenews.zip                     # Downloaded dataset (fake + real CSVs)
+#### 📁 Project Structure
 
-# ├── DataSet\_Misinfo\_FAKE.csv         # Fake news samples
+.
 
-# ├── DataSet\_Misinfo\_TRUE.csv         # True news samples
+├── fakenews.zip                     # Downloaded dataset (fake + real CSVs)
 
-# └── fake\_news\_classifier.ipynb       # Main notebook / script
+├── DataSet\_Misinfo\_FAKE.csv         # Fake news samples
 
-# 
+├── DataSet\_Misinfo\_TRUE.csv         # True news samples
 
-# 🔧 How the Code Works
+└── fake\_news\_classifier.ipynb       # Main notebook / script
 
-# 1\. Download \& Load Dataset
 
-# 
 
-# The script downloads a ZIP archive containing two CSV files:
+#### 🔧 How the Code Works
 
-# 
+###### 1\. Download \& Load Dataset
 
-# DataSet\_Misinfo\_FAKE.csv
 
-# 
 
-# DataSet\_Misinfo\_TRUE.csv
+The script downloads a ZIP archive containing two CSV files:
 
-# 
 
-# These are loaded with pandas, merged, labeled (0 = fake, 1 = true), shuffled, and cleaned.
 
-# 
+DataSet\_Misinfo\_FAKE.csv
 
-# 2\. Preprocessing
 
-# 
 
-# Removes articles shorter than 10 words
+DataSet\_Misinfo\_TRUE.csv
 
-# 
 
-# Limits each article to the first 400 words
 
-# 
+These are loaded with pandas, merged, labeled (0 = fake, 1 = true), shuffled, and cleaned.
 
-# Tokenizes text using TensorFlow’s Tokenizer
+###### 
 
-# 
+###### 2\. Preprocessing
 
-# Converts text → word index sequences
 
-# 
 
-# Pads all sequences to a fixed length
+Removes articles shorter than 10 words
 
-# 
 
-# 3\. Train/Test Split
 
-# 
+Limits each article to the first 400 words
 
-# The dataset is split:
 
-# 
 
-# 70% training
+Tokenizes text using TensorFlow’s Tokenizer
 
-# 
 
-# 30% testing
 
-# 
+Converts text → word index sequences
 
-# Both text and labels are aligned and shuffled.
 
-# 
 
-# 4\. Model Architecture
+Pads all sequences to a fixed length
 
-# 
 
-# A TensorFlow Sequential model:
 
-# 
+###### 3\. Train/Test Split
 
-# Embedding layer
 
-# 
 
-# Dropout
+The dataset is split:
 
-# 
 
-# Bidirectional LSTM
 
-# 
+70% training
 
-# Dense layers with ReLU
 
-# 
 
-# Output: sigmoid (binary classification)
+30% testing
 
-# 
 
-# A custom callback stops training early when accuracy exceeds 99%.
 
-# 
+Both text and labels are aligned and shuffled.
 
-# 5\. Training
 
-# 
 
-# The model is trained with:
+###### 4\. Model Architecture
 
-# 
 
-# binary\_crossentropy loss
 
-# 
+A TensorFlow Sequential model:
 
-# Adam optimizer
 
-# 
 
-# Learning rate scheduler
+Embedding layer
 
-# 
 
-# Validation split (20%)
 
-# 
+Dropout
 
-# Training history (accuracy + loss) is plotted.
 
-# 
 
-# 6\. Evaluation
+Bidirectional LSTM
 
-# 
 
-# The model is evaluated on the test set, and accuracy is printed.
 
-# 
+Dense layers with ReLU
 
-# 7\. User Input Prediction
 
-# 
 
-# The user can paste any news article into the console.
+Output: sigmoid (binary classification)
 
-# The script processes it the same way as the training data and outputs:
 
-# 
 
-# Probability the article is TRUE
+A custom callback stops training early when accuracy exceeds 99%.
 
-# 
 
-# Classification result (FAKE/REAL)
 
-# 
+###### 5\. Training
 
-# ▶️ Running the Project
 
-# 
 
-# Install requirements:
+The model is trained with:
 
-# 
 
-# pip install tensorflow pandas matplotlib requests
 
-# 
+binary\_crossentropy loss
 
-# 
 
-# Run the script or notebook:
 
-# 
+Adam optimizer
 
-# python fake\_news\_classifier.py
 
-# 
 
-# 
+Learning rate scheduler
 
-# or open the notebook in Google Colab.
 
-# 
 
-# After training, enter your article when prompted.
+Validation split (20%)
 
-# 
 
-# 📊 Output Example
 
-# MODEL ACCURACY ON TEST DATA: 97.5%
+Training history (accuracy + loss) is plotted.
 
-# article: "The economy will grow by 500% next week..."
 
-# MODEL PREDICTED TRUENESS: FAKE NEWS (Article is detected as 3% true)
+
+###### 6\. Evaluation
+
+
+
+The model is evaluated on the test set, and accuracy is printed.
+
+
+
+###### 7\. User Input Prediction
+
+
+
+The user can paste any news article into the console.
+
+The script processes it the same way as the training data and outputs:
+
+
+
+Probability the article is TRUE
+
+
+
+Classification result (FAKE/REAL)
+
+
+
+##### ▶️ Running the Project
+
+
+
+###### Install requirements:
+
+
+
+pip install tensorflow pandas matplotlib requests
+
+
+
+
+
+Run the script or notebook:
+
+
+
+python fake\_news\_classifier.py
+
+
+
+
+
+or open the notebook in Google Colab.
+
+
+
+After training, enter your article when prompted.
+
+
+
+##### 📊 Output Example
+
+MODEL ACCURACY ON TEST DATA: 97.5%
+
+article: "The economy will grow by 500% next week..."
+
+MODEL PREDICTED TRUENESS: FAKE NEWS (Article is detected as 3% true)
 
