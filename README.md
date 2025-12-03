@@ -10,6 +10,8 @@ It loads a dataset, preprocesses text, trains an LSTM-based classifier, evaluate
 
 #### 📁 Project Structure
 
+`
+
 .
 
 ├── fakenews.zip                     # Downloaded dataset (fake + real CSVs)
@@ -18,7 +20,7 @@ It loads a dataset, preprocesses text, trains an LSTM-based classifier, evaluate
 
 ├── DataSet\_Misinfo\_TRUE.csv         # True news samples
 
-└── fake\_news\_classifier.ipynb       # Main notebook / script
+└── fake\_news\_classifier.ipynb       # Main notebook / script`
 
 
 
@@ -32,11 +34,8 @@ The script downloads a ZIP archive containing two CSV files:
 
 
 
-DataSet\_Misinfo\_FAKE.csv
-
-
-
-DataSet\_Misinfo\_TRUE.csv
+* DataSet\_Misinfo\_FAKE.csv
+* DataSet\_Misinfo\_TRUE.csv
 
 
 
@@ -48,23 +47,11 @@ These are loaded with pandas, merged, labeled (0 = fake, 1 = true), shuffled, an
 
 
 
-Removes articles shorter than 10 words
-
-
-
-Limits each article to the first 400 words
-
-
-
-Tokenizes text using TensorFlow’s Tokenizer
-
-
-
-Converts text → word index sequences
-
-
-
-Pads all sequences to a fixed length
+* Removes articles shorter than 10 words
+* Limits each article to the first 400 words
+* Tokenizes text using TensorFlow’s Tokenizer
+* Converts text → word index sequences
+* Pads all sequences to a fixed length
 
 
 
@@ -76,11 +63,8 @@ The dataset is split:
 
 
 
-70% training
-
-
-
-30% testing
+* 70% training
+* 30% testing
 
 
 
@@ -96,23 +80,11 @@ A TensorFlow Sequential model:
 
 
 
-Embedding layer
-
-
-
-Dropout
-
-
-
-Bidirectional LSTM
-
-
-
-Dense layers with ReLU
-
-
-
-Output: sigmoid (binary classification)
+* Embedding layer
+* Dropout
+* Bidirectional LSTM
+* Dense layers with ReLU
+* Output: sigmoid (binary classification)
 
 
 
@@ -128,19 +100,10 @@ The model is trained with:
 
 
 
-binary\_crossentropy loss
-
-
-
-Adam optimizer
-
-
-
-Learning rate scheduler
-
-
-
-Validation split (20%)
+* binary\_crossentropy loss
+* Adam optimizer
+* Learning rate scheduler
+* Validation split (20%)
 
 
 
@@ -166,11 +129,8 @@ The script processes it the same way as the training data and outputs:
 
 
 
-Probability the article is TRUE
-
-
-
-Classification result (FAKE/REAL)
+* Probability the article is TRUE
+* Classification result (FAKE/REAL)
 
 
 
@@ -182,7 +142,7 @@ Classification result (FAKE/REAL)
 
 
 
-pip install tensorflow pandas matplotlib requests
+`pip install tensorflow pandas matplotlib requests`
 
 
 
@@ -192,7 +152,7 @@ Run the script or notebook:
 
 
 
-python fake\_news\_classifier.py
+`python fake\_news\_classifier.py`
 
 
 
@@ -208,9 +168,9 @@ After training, enter your article when prompted.
 
 ##### 📊 Output Example
 
-MODEL ACCURACY ON TEST DATA: 97.5%
+`MODEL ACCURACY ON TEST DATA: 97.5%
 
 article: "The economy will grow by 500% next week..."
 
-MODEL PREDICTED TRUENESS: FAKE NEWS (Article is detected as 3% true)
+MODEL PREDICTED TRUENESS: FAKE NEWS (Article is detected as 3% true)`
 
