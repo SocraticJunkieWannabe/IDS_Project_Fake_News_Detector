@@ -1,4 +1,4 @@
-### 📰 Fake News Classification — LSTM Text Classifier
+# 📰 Fake News Classification — LSTM Text Classifier
 
 
 
@@ -8,11 +8,9 @@ It loads a dataset, preprocesses text, trains an LSTM-based classifier, evaluate
 
 
 
-#### 📁 Project Structure
+## 📁 Project Structure
 
-`
-
-.
+```.
 
 ├── fakenews.zip                     # Downloaded dataset (fake + real CSVs)
 
@@ -20,13 +18,15 @@ It loads a dataset, preprocesses text, trains an LSTM-based classifier, evaluate
 
 ├── DataSet\_Misinfo\_TRUE.csv         # True news samples
 
-└── fake\_news\_classifier.ipynb       # Main notebook / script`
+└── fake\_news\_classifier.ipynb       # Main notebook / script
+
+```
 
 
 
-#### 🔧 How the Code Works
+## 🔧 How the Code Works
 
-###### 1\. Download \& Load Dataset
+##### 1\. Download \& Load Dataset
 
 
 
@@ -43,7 +43,7 @@ These are loaded with pandas, merged, labeled (0 = fake, 1 = true), shuffled, an
 
 ###### 
 
-###### 2\. Preprocessing
+##### 2\. Preprocessing
 
 
 
@@ -55,7 +55,7 @@ These are loaded with pandas, merged, labeled (0 = fake, 1 = true), shuffled, an
 
 
 
-###### 3\. Train/Test Split
+##### 3\. Train/Test Split
 
 
 
@@ -72,7 +72,7 @@ Both text and labels are aligned and shuffled.
 
 
 
-###### 4\. Model Architecture
+##### 4\. Model Architecture
 
 
 
@@ -92,7 +92,7 @@ A custom callback stops training early when accuracy exceeds 99%.
 
 
 
-###### 5\. Training
+##### 5\. Training
 
 
 
@@ -111,15 +111,15 @@ Training history (accuracy + loss) is plotted.
 
 
 
-###### 6\. Evaluation
+##### 6\. Evaluation
 
 
 
 The model is evaluated on the test set, and accuracy is printed.
 
+##### 
 
-
-###### 7\. User Input Prediction
+##### 7\. User Input Prediction
 
 
 
@@ -134,11 +134,11 @@ The script processes it the same way as the training data and outputs:
 
 
 
-##### ▶️ Running the Project
+## ▶️ Running the Project
 
 
 
-###### Install requirements:
+##### Install requirements:
 
 
 
@@ -166,7 +166,7 @@ After training, enter your article when prompted.
 
 
 
-##### 📊 Output Example
+## 📊 Output Example
 
 `MODEL ACCURACY ON TEST DATA: 97.5%
 
