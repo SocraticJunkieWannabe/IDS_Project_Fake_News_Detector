@@ -1,5 +1,6 @@
 # 📰 Fake News Classification — LSTM Text Classifier
 
+AUTHORS: Loïc Delattre, Guillaume Le Chartier, Mattis Roellinger
 
 
 This project trains a neural network to classify news articles as FAKE or REAL using TensorFlow.
