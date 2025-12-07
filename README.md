@@ -3,7 +3,7 @@
 AUTHORS: Loïc Delattre, Guillaume Le Chartier, Mattis Roellinger
 
 
-This project trains a neural network to classify news articles as FAKE or REAL using TensorFlow.
+The aim of this project is to train a neural network to classify news articles as FAKE or REAL using TensorFlow.
 
 It loads a dataset, preprocesses text, trains an LSTM-based classifier, evaluates accuracy, and allows users to test new articles.
 
